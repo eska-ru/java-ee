@@ -15,4 +15,25 @@
         <servlet-name>FirstServlet</servlet-name>
         <url-pattern>/first-servlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ErrorPage</servlet-name>
+        <servlet-class>ru.writeway.errors.ExceptionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ErrorPage</servlet-name>
+        <url-pattern>/error_page</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error_page</location>
+    </error-page>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error_page</location>
+    </error-page>
+
 </web-app>
