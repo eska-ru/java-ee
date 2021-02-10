@@ -14,7 +14,7 @@ public class FirstServlet implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         logger.info("FirstServlet is initialized");
-        this.config = config;
+        this.config = servletConfig;
     }
 
     @Override
@@ -25,6 +25,9 @@ public class FirstServlet implements Servlet {
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         logger.info("New request to FirstServlet");
+
+        config.getServletContext().getRequestDispatcher("/elements/page_menu").include(servletRequest, servletResponse);
+
         servletResponse.getWriter().println("<h1>Hello from the other side!</h1>");
     }
 
