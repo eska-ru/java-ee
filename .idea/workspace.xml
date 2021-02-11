@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4aa64ef0-3b8b-4115-9016-b6d2ad0a8864" name="Default Changelist" comment="" />
+    <list default="true" id="4aa64ef0-3b8b-4115-9016-b6d2ad0a8864" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/first_web_app_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/first_web_app_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/listeners/BootstrapListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/persist/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/persist/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/persist/TemporaryProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/persist/TemporaryUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/persist/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/persist/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/webapp/WEB-INF/product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/webapp/WEB-INF/product_form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/webapp/WEB-INF/user.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-web-app/src/main/webapp/WEB-INF/user_form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/first-web-app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/CatalogServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/CatalogServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/filters/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/src/main/java/ru/writeway/filters/EncodingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/target/classes/ru/writeway/FirstServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/target/classes/ru/writeway/FirstServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/target/first-web-app.war" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/target/first-web-app.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/target/first-web-app/WEB-INF/classes/ru/writeway/FirstServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/target/first-web-app/WEB-INF/classes/ru/writeway/FirstServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/target/first-web-app/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/target/first-web-app/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-web-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/first-web-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +49,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nhKlDsweCxrnfXsSla5PdIXupX" />
@@ -30,8 +66,10 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/first-web-app/src/main/webapp/WEB-INF" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -40,7 +78,27 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/first-web-app/src/main/webapp/WEB-INF" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.writeway" />
+      <recent name="ru.writeway.persist" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -81,6 +139,7 @@
       <workItem from="1611843055778" duration="2412000" />
       <workItem from="1611862151668" duration="159000" />
       <workItem from="1611862984400" duration="562000" />
+      <workItem from="1613041752044" duration="8248000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1611863679005</created>
