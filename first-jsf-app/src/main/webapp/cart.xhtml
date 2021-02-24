@@ -1,0 +1,46 @@
+<html lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <title>Our shop</title>
+</h:head>
+
+<h:body>
+    <h1>Cart</h1>
+
+    <p:button value="Products" href="product.xhtml" />
+
+    <h:form id="cartForm">
+        <p:dataTable var="item" value="#{cartController.allProducts}">
+            <p:column headerText="Id">
+                <h:outputText value="#{item.key.id}"/>
+            </p:column>
+            <p:column headerText="Name">
+                <h:outputText value="#{item.key.name}"/>
+            </p:column>
+            <p:column headerText="Price">
+                <h:outputText value="#{item.key.price}"/>
+            </p:column>
+            <p:column headerText="Stock">
+                <h:outputText value="#{item.value}"/>
+            </p:column>
+            <p:column headerText="Actions">
+                <p:commandButton value="Add" styleClass="ui-button-success" disabled="#{item.key.stock == 0}"
+                                 action="#{cartController.addToCart(item.key)}" update="cartForm"/>
+                <p:commandButton value="Remove" action="#{cartController.removeFromCart(item.key)}"
+                                 update="cartForm"/>
+                <p:commandButton value="Remove All" styleClass="ui-button-danger"
+                                 action="#{cartController.removeAll(item.key)}" update="cartForm"/>
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</h:body>
+
+</html>
