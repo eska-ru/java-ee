@@ -1,0 +1,26 @@
+<html lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <title>Add category</title>
+</h:head>
+
+<h:body>
+    <h:form id="categoryForm">
+        <input type="hidden" id="id" value="#{categoryController.category.id}"/>
+
+        <div class="p-field p-grid">
+            <label for="name" class="p-col-fixed" style="width:100px">Name</label>
+            <p:inputText id="name" value="#{categoryController.category.name}" placeholder="Enter name"/>
+            <p:commandButton value="Submit" action="#{categoryController.saveCategory}"/>
+        </div>
+
+    </h:form>
+</h:body>
+
+</html>

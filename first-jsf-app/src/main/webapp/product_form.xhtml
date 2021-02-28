@@ -13,37 +13,41 @@
 </h:head>
 
 <h:body>
+    <f:event listener="#{categoryController.preloadData}" type="preRenderView"/>
+
     <h1>Item edit</h1>
 
     <h:form id="productForm">
-        <input type="hidden" id="id" value="#{productController.product.id}" />
+        <input type="hidden" id="id" value="#{productController.product.id}"/>
 
         <div class="p-field p-grid">
             <label for="name" class="p-col-fixed" style="width:100px">Name</label>
-            <div class="p-col">
-                <p:inputText id="name" value="#{productController.product.name}" placeholder="Enter name" />
-            </div>
+            <p:inputText id="name" value="#{productController.product.name}" placeholder="Enter name"/>
         </div>
 
         <div class="p-field p-grid">
-            <label for="description" class="p-col-fixed" style="width:100px">Description</label>
-            <div class="p-col">
-                <p:inputText id="description" value="#{productController.product.description}" placeholder="Enter description" />
-            </div>
+            <label for="description" class="p-col-fixed" style="width:100px">Description2</label>
+            <p:inputText id="description" value="#{productController.product.description}"
+                         placeholder="Enter description"/>
+        </div>
+
+        <div class="p-field p-grid">
+            <label for="category" class="p-col-fixed" style="width:100px">Category</label>
+            <p:selectOneMenu id="category" value="#{productController.product.category.id}">
+                <f:selectItems value="#{categoryController.allCategories}" var="category"
+                               itemLabel="#{category.name}" itemValue="#{category.id}"/>
+            </p:selectOneMenu>
+            <p:commandButton value="+" action="#{categoryController.addCategoryDialog}" update="productForm" />
         </div>
 
         <div class="p-field p-grid">
             <label for="price" class="p-col-fixed" style="width:100px">Price</label>
-            <div class="p-col">
-                <p:inputNumber id="price" value="#{productController.product.price}" placeholder="Enter price" />
-            </div>
+            <p:inputNumber id="price" value="#{productController.product.price}" placeholder="Enter price"/>
         </div>
 
         <div class="p-field p-grid">
             <label for="stock" class="p-col-fixed" style="width:100px">Stock</label>
-            <div class="p-col">
-                <p:inputNumber id="stock" value="#{productController.product.stock}" placeholder="Enter stock" />
-            </div>
+            <p:inputNumber id="stock" value="#{productController.product.stock}" placeholder="Enter stock"/>
         </div>
 
         <p:commandButton value="Submit" action="#{productController.saveProduct}"/>

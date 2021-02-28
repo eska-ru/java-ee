@@ -1,13 +1,44 @@
 package ru.writeway.persist;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "products")
+@NamedQueries({
+        @NamedQuery(name = "findAll", query = "from Product"),
+        @NamedQuery(name = "countAll", query = "select count(*) from Product"),
+        @NamedQuery(name = "deleteById", query = "delete from Product p where p.id = :id"),
+        @NamedQuery(name = "getProductById", query = "from Product where id = :id")
+})
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
+
+    @Column(name = "price")
     protected BigDecimal price;
+
+    @Column
     protected String description;
+
+    @Column
     protected String name;
+
+    @Column
     protected int stock;
+
+    @ManyToOne()
+    protected Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public int getStock() {
         return stock;

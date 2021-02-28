@@ -1,7 +1,7 @@
 package ru.writeway.controller;
 
 import ru.writeway.persist.Product;
-import ru.writeway.persist.TemporaryProductRepository;
+import ru.writeway.persist.SqlProductRepository;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -14,7 +14,7 @@ import java.util.*;
 public class CartController implements Serializable {
 
     @Inject
-    private TemporaryProductRepository productRepository;
+    private SqlProductRepository productRepository;
 
     private Map<Product, Integer> productMap = new HashMap<>();
 
