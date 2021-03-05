@@ -1,6 +1,7 @@
 package ru.writeway.persist;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "category")
@@ -9,7 +10,7 @@ import javax.persistence.*;
         @NamedQuery(name = "countAllCategory", query = "select count(*) from Category"),
         @NamedQuery(name = "getCategoryById", query = "from Category where id = :id")
 })
-public class Category {
+public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

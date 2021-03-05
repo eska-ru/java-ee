@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html lang="en"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
@@ -13,8 +13,6 @@
 </h:head>
 
 <h:body>
-    <f:event listener="#{categoryController.preloadData}" type="preRenderView"/>
-
     <h1>Item edit</h1>
 
     <h:form id="productForm">
@@ -33,11 +31,11 @@
 
         <div class="p-field p-grid">
             <label for="category" class="p-col-fixed" style="width:100px">Category</label>
-            <p:selectOneMenu id="category" value="#{productController.product.category.id}">
-                <f:selectItems value="#{categoryController.allCategories}" var="category"
+            <p:selectOneMenu id="category" value="#{productController.product.categoryId}">
+                <f:selectItems value="#{productController.categories}" var="category"
                                itemLabel="#{category.name}" itemValue="#{category.id}"/>
             </p:selectOneMenu>
-            <p:commandButton value="+" action="#{categoryController.addCategoryDialog}" update="productForm" />
+            <p:commandButton value="+-"  onclick="PF('dlg2').show()" action="#{categoryController.createCategory}" />
         </div>
 
         <div class="p-field p-grid">
@@ -51,6 +49,22 @@
         </div>
 
         <p:commandButton value="Submit" action="#{productController.saveProduct}"/>
+
+
+    </h:form>
+
+    <h:form id="categoryForm">
+        <p:dialog header="Header" widgetVar="dlg2" minHeight="40" width="350" showEffect="fade" modal="true">
+            <input type="hidden" itemid="id" value="#{categoryController.category.id}"/>
+
+            <div class="p-field p-grid">
+                <label for="name" class="p-col-fixed" style="width:100px">Name</label>
+                <p:inputText itemid="name" value="#{categoryController.category.name}" placeholder="Enter name"/>
+                <p:commandButton value="Submit" action="#{categoryController.saveCategory}"
+                                 onclick="PF('dlg2').hode()" update="productForm"/>
+            </div>
+
+        </p:dialog>
     </h:form>
 </h:body>
 
