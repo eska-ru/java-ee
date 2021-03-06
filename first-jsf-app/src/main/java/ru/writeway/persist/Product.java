@@ -1,6 +1,9 @@
 package ru.writeway.persist;
 
+import ru.writeway.service.ProductRepr;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
@@ -11,7 +14,7 @@ import java.math.BigDecimal;
         @NamedQuery(name = "deleteById", query = "delete from Product p where p.id = :id"),
         @NamedQuery(name = "getProductById", query = "from Product where id = :id")
 })
-public class Product {
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +35,11 @@ public class Product {
     @ManyToOne()
     protected Category category;
 
+    public Product(ProductRepr product, Category category) {
+        this(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getStock());
+        this.category = category;
+    }
+
     public Category getCategory() {
         return category;
     }
@@ -46,19 +54,6 @@ public class Product {
 
     public void setStock(int stock) {
         this.stock = stock;
-    }
-
-    public boolean getFromStock() {
-        if (stock > 0) {
-            --stock;
-            return true;
-        }
-
-        return false;
-    }
-
-    public void putToStock() {
-        ++stock;
     }
 
     public Long getId() {
@@ -99,6 +94,11 @@ public class Product {
         this.description = description;
         this.price = price;
         this.stock = stock;
+    }
+
+    public Product(Product product, Category category) {
+        this(product.id, product.name, product.description, product.price, product.stock);
+        this.category = category;
     }
 
     public Product() {

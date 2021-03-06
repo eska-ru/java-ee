@@ -1,10 +1,9 @@
 package ru.writeway.controller;
 
-import ru.writeway.persist.Product;
-import ru.writeway.persist.SqlProductRepository;
+import ru.writeway.service.CartService;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.*;
@@ -13,60 +12,22 @@ import java.util.*;
 @SessionScoped
 public class CartController implements Serializable {
 
-    @Inject
-    private SqlProductRepository productRepository;
+    @EJB
+    private CartService cartService;
 
-    private Map<Product, Integer> productMap = new HashMap<>();
-
-    public Boolean addToCart(Product product) {
-        if (product == null) {
-            return false;
-        }
-
-        if (!product.getFromStock()) {
-            return false;
-        }
-
-        if (productMap.containsKey(product)) {
-            productMap.replace(product, productMap.get(product)+1);
-        } else {
-            productMap.put(product, 1);
-        }
-
-        return true;
+    public Boolean addToCart(Long id) {
+        return cartService.addToCart(id);
     }
 
-    public void removeFromCart(Product product) {
-        if (product == null) {
-            return;
-        }
-
-        if (productMap.containsKey(product)) {
-            product.putToStock();
-            productMap.replace(product, productMap.get(product)-1);
-
-            if (productMap.get(product) < 1) {
-                productMap.remove(product);
-            }
-        }
+    public void removeFromCart(Long id) {
+        cartService.removeFromCart(id);
     }
 
-    public void removeAll(Product product) {
-        if (product == null) {
-            return;
-        }
-
-        if (productMap.containsKey(product)) {
-            for (int i = 0; i < productMap.get(product); i++) {
-                product.putToStock();
-            }
-        }
-
-        productMap.remove(product);
+    public void removeAll(Long id) {
+        cartService.removeAll(id);
     }
 
-    public List<Map.Entry<Product, Integer>> getAllProducts() {
-        Set<Map.Entry<Product, Integer>> productSet = productMap.entrySet();
-        return new ArrayList<>(productSet);
+    public List<Map.Entry<Long, Integer>> getAllProducts() {
+        return cartService.getAllProducts();
     }
 }
