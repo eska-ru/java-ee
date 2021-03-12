@@ -1,8 +1,5 @@
 package ru.writeway.service;
 
-import ru.writeway.persist.Category;
-import ru.writeway.persist.Product;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -19,19 +16,15 @@ public class ProductRepr implements Serializable {
     public ProductRepr() {
     }
 
-    public ProductRepr(Product product) {
-        if (product == null) {
-            throw new NullPointerException();
-        }
-
-        id = product.getId();
-        price = product.getPrice();
-        description = product.getDescription();
-        name = product.getName();
-        stock = product.getStock();
-        Category category = product.getCategory();
-        categoryId = category != null ? category.getId() : null;
-        categoryName = category != null ? category.getName() : null;
+    public ProductRepr(Long id, String name, String description, BigDecimal price, Long categoryId,
+                       String categoryName, int stock) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.categoryId = categoryId;
+        this.categoryName = categoryName;
+        this.stock = stock;
     }
 
     public Long getId() {

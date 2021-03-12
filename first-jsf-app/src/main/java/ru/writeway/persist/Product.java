@@ -12,7 +12,9 @@ import java.math.BigDecimal;
         @NamedQuery(name = "findAll", query = "from Product"),
         @NamedQuery(name = "countAll", query = "select count(*) from Product"),
         @NamedQuery(name = "deleteById", query = "delete from Product p where p.id = :id"),
-        @NamedQuery(name = "getProductById", query = "from Product where id = :id")
+        @NamedQuery(name = "getProductById", query = "from Product where id = :id"),
+        @NamedQuery(name = "getAllByCategoryId", query = "from Product where category.id = :id"),
+        @NamedQuery(name = "getAllByName", query = "from Product where name = :name")
 })
 public class Product implements Serializable {
 
