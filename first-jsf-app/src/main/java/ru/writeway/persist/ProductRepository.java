@@ -32,6 +32,20 @@ public class ProductRepository {
                 .getResultList();
     }
 
+    public List<Product> getAllByCategoryId(long id) {
+        return em.createNamedQuery("getAllByCategoryId", Product.class)
+                .setParameter("id", id)
+                .getResultList();
+    }
+
+    public List<Product> getAllByName(String name) {
+        System.out.println("!!!!!!!!!!!!" + name + "!!");
+
+        return em.createNamedQuery("getAllByName", Product.class)
+                .setParameter("name", name)
+                .getResultList();
+    }
+
     public Product findById(Long id) {
         return em.find(Product.class, id);
     }

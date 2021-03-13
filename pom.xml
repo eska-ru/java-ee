@@ -8,14 +8,17 @@
     <artifactId>java-ee</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>first-web-app</module>
-        <module>first-jsf-app</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+
+    <modules>
+        <module>first-web-app</module>
+        <module>product-service-api</module>
+        <module>first-jsf-app</module>
+        <module>remote-client</module>
+    </modules>
 
 </project>

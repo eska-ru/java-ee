@@ -1,0 +1,18 @@
+POST http://localhost:8080/first-jsf-app/api/v1/category/
+Content-Type: application/json
+
+{
+  "name": "New category"
+}
+
+###
+
+GET http://localhost:8080/first-jsf-app/api/v1/product/byCategory/3
+
+###
+
+GET http://localhost:8080/first-jsf-app/api/v1/product/byName/Product  2
+
+###
+
+GET http://localhost:8080/first-jsf-app/api/v1/product
